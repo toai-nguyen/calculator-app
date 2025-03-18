@@ -1,6 +1,6 @@
 import { evaluate } from 'mathjs';
 function HandleMathString(mathString){
-    mathString = CompleteMathString(mathString);
+    console.log("mathString in HandleMathString: ", mathString);
     try {
         return evaluate(mathString);
     }
@@ -36,4 +36,4 @@ function CompleteMathString(mathString) {
     return mathString;
 }
 
-export { HandleMathString, AddMathString };
+export { HandleMathString, AddMathString, CompleteMathString };

@@ -1,7 +1,7 @@
 import Result from "../Components/Result";
 import KeyBoard from "../Components/KeyBoard";
 import { useState } from "react";
-import { HandleMathString, AddMathString } from "../services/HandleCalculator";
+import { HandleMathString, AddMathString, CompleteMathString } from "../services/HandleCalculator";
 
 export default function Calculator() {
   const [mathString, setMathString] = useState("");
@@ -15,7 +15,9 @@ export default function Calculator() {
         setResult("");
         break;
       case "=":
-        const calcResult = HandleMathString(mathString);
+        const complete = CompleteMathString(mathString);
+        const calcResult = HandleMathString(complete);
+        setMathString(complete);
         console.log("result: " + calcResult);
         setResult(calcResult);
         setIsDone(true);
@@ -27,7 +29,8 @@ export default function Calculator() {
         break;
       default:
         if(isDone === true){
-            setMathString(value);
+            const newMathString = AddMathString("", value);
+            setMathString(newMathString);
             setResult("");
             setIsDone(false);
             break;
