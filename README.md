@@ -1,4 +1,4 @@
-# Calculator web app using go and react 
+# Calculator web app using react 
 
 ## Feature: 
 ### Simple math
