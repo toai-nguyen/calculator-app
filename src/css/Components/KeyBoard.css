@@ -1,0 +1,50 @@
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.key {
+    padding: 15px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.key:hover {
+    opacity: 0.8;
+}
+.key:active {
+    transform: scale(0.95);
+}
+
+.number {
+    background-color: #ffffff;
+}
+.number:active {
+    background-color: #eeeeee;
+}
+
+.operator {
+    background-color: #ff9500;
+    color: white;
+}
+.operator:active {
+    background-color: #e68a00;
+}
+
+.function {
+    background-color: #a5a5a5;
+}
+.function:active {
+    background-color: #8a8a8a;
+}
+.wide {
+    grid-column: span 2;
+}
